@@ -1,0 +1,331 @@
+:root {
+  --background-color: #fefdf9;
+  --dark-green: #024029;
+  --heading-color: #28534a;
+  --orange-border: #e7785f;
+}
+
+body {
+  font-family: 'Lora', serif;
+}
+
+p,
+h1,
+h2,
+h3,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+nav {
+  padding: 30px 0;
+}
+
+:is(header) a {
+  text-decoration: none;
+  color: #f7f5ee;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+section {
+  background-color: #bacfc9;
+  border: 1px solid #c8d3ca;
+  padding: 20px 0;
+}
+
+h2,
+h3 {
+  color: var(--heading-color);
+  margin-bottom: 20px;
+}
+
+ul,
+h1,
+h2,
+footer {
+  text-align: center;
+}
+
+section h3 {
+  text-align: left;
+}
+
+header {
+  background-color: var(--dark-green);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+}
+
+.navigation-links > li {
+  font-size: 21px;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.navigation-links li:last-child {
+  margin-right: 0;
+}
+
+main {
+  background-color: var(--background-color);
+  padding-top: 84px;
+}
+
+h1 {
+  color: var(--dark-green);
+  text-transform: uppercase;
+  font-size: 35px;
+  border: 1px solid var(--dark-green);
+  padding: 10px 0;
+}
+
+h2 {
+  font-size: 30px;
+  text-decoration: underline;
+}
+
+h3 {
+  font-size: 25px;
+}
+
+p {
+  color: #667a73;
+  font-size: 20px;
+  font-style: italic;
+}
+
+img {
+  border: 5px dotted var(--dark-green);
+}
+
+#general {
+  background-color: #e9eee7;
+}
+
+/* Максимальна специфічність  в цього селектора - (1,1,1) - один з двох однакових */
+#general .container > p {
+  text-align: center;
+  line-height: 200%;
+}
+
+#education {
+  background-image: url(../images/section2.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+#education h3 {
+  position: relative;
+  padding-right: 60px;
+}
+
+.finished::after {
+  content: '✔';
+  color: green;
+  position: absolute;
+  top: 5px;
+  right: 40px;
+}
+
+.in-progress::before {
+  content: '⌛';
+  position: absolute;
+  top: 5px;
+  right: 33px;
+}
+
+#hobby {
+  background-image: url(../images/section3.avif);
+}
+
+#hobby h3 {
+  position: sticky;
+  top: 90px;
+}
+
+/* Максимальна специфічність в цього селектора - (1,1,1) */
+#hobby .container > ul {
+  list-style-type: disc;
+}
+
+.hobby-list li:first-child {
+  color: blueviolet;
+}
+.hobby-list li:nth-child(2) {
+  color: blue;
+}
+.hobby-list li:nth-child(3) {
+  color: green;
+}
+.hobby-list li:last-child {
+  color: red;
+}
+
+h3::first-letter {
+  font-size: 35px;
+}
+
+h3::first-line {
+  text-decoration: underline;
+}
+
+#education img,
+#hobby img {
+  margin-bottom: 20px;
+}
+
+#education li,
+#hobby li {
+  margin-bottom: 25px;
+}
+
+#education li:last-child,
+#hobby li:last-child {
+  margin-bottom: 0;
+}
+
+footer {
+  background: linear-gradient(var(--background-color), var(--heading-color));
+  padding: 20px;
+}
+
+footer a {
+  text-decoration: overline;
+  color: var(--dark-green);
+  display: inline-block;
+  margin: 0 48px 16px 0;
+}
+
+address a:nth-child(2) {
+  margin-right: 0;
+}
+
+a + p {
+  color: var(--dark-green);
+}
+
+fieldset ~ label {
+  font-size: 22px;
+  line-height: 250%;
+}
+
+fieldset {
+  border: var(--dark-green) 3px solid;
+}
+
+fieldset legend {
+  text-align: center;
+  color: var(--dark-green);
+  text-decoration: underline;
+  font-size: 22px;
+}
+
+fieldset > label {
+  color: #00100a;
+  font-size: 20px;
+  line-height: 200%;
+}
+
+input:required {
+  border: 3px solid var(--orange-border);
+}
+
+input:not(:required) {
+  border: 3px solid var(--heading-color);
+}
+
+input:checked {
+  outline: var(--dark-green) 3px double;
+}
+
+.favcover > input {
+  color: var(--dark-green);
+  font-size: 18px;
+}
+
+.favcover-file:hover,
+.favcover-file:focus,
+.submit:hover,
+.submit:focus,
+.reset:hover,
+.reset:focus,
+.submit:active,
+.reset:active {
+  color: var(--heading-color);
+  background-color: #1b9c4e;
+  border: 2px solid var(--orange-border);
+  outline: none;
+}
+
+.reset:hover,
+.reset:focus {
+  background-color: #ed514e;
+}
+
+.submit:active,
+.reset:active,
+.favcover-file:active {
+  background-color: var(--background-color);
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table,
+thead,
+tfoot {
+  background-color: var(--background-color);
+  border: 3px solid var(--dark-green);
+}
+
+th,
+td {
+  border: 1px solid var(--orange-border);
+}
+
+table caption {
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 150%;
+  color: var(--heading-color);
+}
+
+th {
+  text-align: center;
+  font-size: 18px;
+  line-height: 120%;
+  font-style: italic;
+}
+
+td {
+  font-size: 17px;
+}
+
+.th-name,
+.th-points {
+  vertical-align: top;
+}
+
+#books-price,
+#items-availability,
+#books-competitions {
+  background-image: url(../images/section3.avif);
+  background-position: center;
+  background-attachment: fixed;
+}
